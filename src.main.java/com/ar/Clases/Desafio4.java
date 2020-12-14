@@ -1,7 +1,5 @@
 package com.ar.Clases;
 
-import java.util.ArrayList;
-
 import org.apache.spark.SparkConf;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -17,7 +15,7 @@ public class Desafio4 {
 		sparkConf.setMaster("local");
 	    SparkSession sparkSession = SparkSession.builder().config(sparkConf).getOrCreate();
 	  	    
-	    Dataset ds =  sparkSession.read().json("resources/MPE1004.json");
+	    Dataset<?> ds =  sparkSession.read().json("resources/MPE1004.json");
 	    
 		 Dataset<?> resp = ds.select(ds.col("site_id"),  functions.explode(ds.col("results")));
 		 

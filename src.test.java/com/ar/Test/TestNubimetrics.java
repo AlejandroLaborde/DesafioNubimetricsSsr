@@ -163,16 +163,16 @@ class TestNubimetrics {
 	void test_12_desafio7_availableQuantityOrdenadoDesc() {
 		Dataset response = Desafio7.ejecutarDesafio7();
 		response.show();
-		List listavailableQuantity = response.select("availableQuantity").collectAsList();
-		assertEquals("[999]", listavailableQuantity.get(0).toString());
+		List<Row> listavailableQuantity = response.select("availableQuantity").collectAsList();
+		assertEquals(999, listavailableQuantity.get(0).getLong(0));
 	}
 	
 	@Test
 	void test_13_desafio7_stockPorcentageCorrecto() {
 		Dataset response = Desafio7.ejecutarDesafio7();
 		response.show();
-		List listaPorcentages = response.select("stockPercentage").collectAsList();
-		assertEquals("[70.30]", listaPorcentages.get(0).toString());
+		List<Row> listaPorcentages = response.select("stockPercentage").collectAsList();
+		assertEquals("70.30", listaPorcentages.get(0).getDecimal(0).toString());
 	}
 
 }

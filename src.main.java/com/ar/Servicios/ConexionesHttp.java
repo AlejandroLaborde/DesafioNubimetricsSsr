@@ -31,13 +31,13 @@ public class ConexionesHttp {
 					bos.write(buffer, 0, length);
 				}
 			}else {
-				return null;
+				 throw new ErrorConexionException("Fallo al querer realizar la conexion. Codigo de Respuesta: " + conn.getResponseCode());
 			}
 			
 
 			
 		} catch (Exception e) {
-			
+			 e.printStackTrace();
 			 throw new ErrorConexionException("Fallo al querer realizar la conexion");
 		}finally {
 			if(conn != null) {

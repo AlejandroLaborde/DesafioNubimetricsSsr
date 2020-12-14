@@ -4,13 +4,11 @@ import org.apache.spark.SparkConf;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
-import org.apache.spark.sql.functions;
-import org.apache.spark.sql.expressions.Window;
-import org.apache.spark.sql.expressions.WindowSpec;
+
 
 public class Desafio7 {
 	
-	public static Dataset ejecutarDesafio7() {
+	public static Dataset<?> ejecutarDesafio7() {
 		
 		SparkConf sparkConf = new SparkConf().setAppName("Test");
 		sparkConf.setMaster("local");
